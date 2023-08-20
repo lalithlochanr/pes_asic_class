@@ -14,7 +14,7 @@ chmod 755 run.sh
 For the bin file of gcc ubuntu riscv64 in the riscv_toolchain file enter into root privileges and export PATH. 
 Restart the terminal.
 
-## Course
+## Course Log
 
 ### Day 1
 
