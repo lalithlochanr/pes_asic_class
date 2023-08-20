@@ -36,26 +36,26 @@ Restart the terminal.
 ### 1. Create a simple C program that calculates the sum from 1 to N integers.  
 * Open the terminal.
 * Open any text editor(eg.leafpad) and create a file sum1ton.c 
-![Screenshot from 2023-08-20 16-18-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8b9d236-6cff-4674-99ed-1574a3a358b1)
-![Screenshot from 2023-08-20 16-16-16](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1e03ac92-d965-4ea1-998d-2e1854b3713b)
-![Screenshot from 2023-08-20 16-16-59](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/75ef4f0b-9152-4b34-8e68-f6c64e300a67)
+![Screenshot from 2023-08-20 16-18-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8b9d236-6cff-4674-99ed-1574a3a358b1)  
+![Screenshot from 2023-08-20 16-16-16](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1e03ac92-d965-4ea1-998d-2e1854b3713b)  
+![Screenshot from 2023-08-20 16-16-59](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/75ef4f0b-9152-4b34-8e68-f6c64e300a67)  
 * Open an another terminal
-![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/5d056956-c19d-4e96-9e36-9fef38ef60fb)
+![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/5d056956-c19d-4e96-9e36-9fef38ef60fb)  
 * Type main
 * You can see there are 15 instructions which can be verified using hexadecimal values.
 * Quit this terminal.
 
 * Now on a new terminal
 ![Screenshot from 2023-08-20 16-13-18](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/64be52ef-731a-434e-9c03-0aa98bd1878b)  
-![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/39c1b559-a03a-49da-bfae-b692228417d6)
+![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/39c1b559-a03a-49da-bfae-b692228417d6)  
 * Type main
 * Now you can see there are 12 instrcutions because of change of command to -0fast.
 
 * Now to verify on RISCV compiler
-  ![Screenshot from 2023-08-20 16-21-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8e9d3334-7030-4749-a193-f4fbe5421678)
+  ![Screenshot from 2023-08-20 16-21-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8e9d3334-7030-4749-a193-f4fbe5421678)  
 * To Debug, open another terminal
-![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7e29b270-e2d9-4172-a0a5-eaf7a7dd101f)
+![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7e29b270-e2d9-4172-a0a5-eaf7a7dd101f)  
 * Back to main terminal
-  ![Screenshot from 2023-08-20 17-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e14d2bf9-4e95-431e-b9e5-5da654346bf9)
+  ![Screenshot from 2023-08-20 17-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e14d2bf9-4e95-431e-b9e5-5da654346bf9)  
 * From the provided image, you can observe a clear demonstration of the sequential debugging process, illustrating how to proceed through the code one step at a time.
 
