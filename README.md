@@ -32,3 +32,7 @@ Restart the terminal.
 * Single and Double Precision Floating Point Extension: Floating-point extension handles real numbers; e.g., fadd.s f1, f2, f3 adds single-precision floating-point values in f2 and f3, storing the result in f1.
 * Application Binary Interface (ABI): The ABI defines software-hardware interaction; e.g., parameter passing in RISC-V often uses registers like a0, a1 for function arguments and a7 for system calls.  
 * Memory Allocation and Stack Pointer: Stack management is crucial; e.g., the stack pointer (sp) tracks function call frames, and memory allocation functions like malloc allocate dynamic memory, e.g., ptr = malloc(size).  
+
+### 1. Create a simple C program that calculates the sum from 1 to N integers.  
+* Open the terminal.
+* Open any text editor(eg.leafpad) and create a file sum1ton.c 
