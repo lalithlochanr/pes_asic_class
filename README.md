@@ -36,3 +36,5 @@ Restart the terminal.
 ### 1. Create a simple C program that calculates the sum from 1 to N integers.  
 * Open the terminal.
 * Open any text editor(eg.leafpad) and create a file sum1ton.c 
+![Screenshot from 2023-08-20 16-18-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8b9d236-6cff-4674-99ed-1574a3a358b1)
+![Screenshot from 2023-08-20 16-16-16](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1e03ac92-d965-4ea1-998d-2e1854b3713b)
