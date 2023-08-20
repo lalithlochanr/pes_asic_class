@@ -45,7 +45,7 @@ Restart the terminal.
 * You can see there are 15 instructions which can be verified using hexadecimal values.
 * Quit this terminal.
 
-*Now on a new terminal
+* Now on a new terminal
 ![Screenshot from 2023-08-20 16-13-18](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/64be52ef-731a-434e-9c03-0aa98bd1878b)  
 ![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/39c1b559-a03a-49da-bfae-b692228417d6)
 * Type main
@@ -55,5 +55,7 @@ Restart the terminal.
   ![Screenshot from 2023-08-20 16-21-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8e9d3334-7030-4749-a193-f4fbe5421678)
 * To Debug, open another terminal
 ![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7e29b270-e2d9-4172-a0a5-eaf7a7dd101f)
-
+* Back to main terminal
+  ![Screenshot from 2023-08-20 17-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e14d2bf9-4e95-431e-b9e5-5da654346bf9)
+* From the provided image, you can observe a clear demonstration of the sequential debugging process, illustrating how to proceed through the code one step at a time.
 
