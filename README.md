@@ -36,26 +36,34 @@ Restart the terminal.
 ### 1. Create a simple C program that calculates the sum from 1 to N integers.  
 * Open the terminal.
 * Open any text editor(eg.leafpad) and create a file sum1ton.c 
-![Screenshot from 2023-08-20 16-18-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8b9d236-6cff-4674-99ed-1574a3a358b1)  
-![Screenshot from 2023-08-20 16-16-16](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1e03ac92-d965-4ea1-998d-2e1854b3713b)  
-![Screenshot from 2023-08-20 16-16-59](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/75ef4f0b-9152-4b34-8e68-f6c64e300a67)  
+![Screenshot from 2023-08-20 16-18-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/73bbd99a-e44c-4212-85ca-0bf7236d0c0e)
+
+![Screenshot from 2023-08-20 16-16-59](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/80534baf-66da-4362-b185-fd45d1a9aefa)  
+
 * Open an another terminal
-![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/5d056956-c19d-4e96-9e36-9fef38ef60fb)  
+ ![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1ded2b58-db5c-461d-9494-918b401b447e)
+![Screenshot from 2023-08-20 16-12-43](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/170f3366-3af7-4532-8c7d-33f8b098f23d)
+
 * Type main
 * You can see there are 15 instructions which can be verified using hexadecimal values.
 * Quit this terminal.
 
-* Now on a new terminal
-![Screenshot from 2023-08-20 16-13-18](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/64be52ef-731a-434e-9c03-0aa98bd1878b)  
-![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/39c1b559-a03a-49da-bfae-b692228417d6)  
+* Now on the main terminal
+  ![Screenshot from 2023-08-20 16-13-18](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e2d9a269-bcc4-4039-bf78-29f4daa46cbb)
+  
+![Screenshot from 2023-08-20 16-13-56](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d0425a08-7c9b-4538-805a-b37407f50743)
+
 * Type main
 * Now you can see there are 12 instrcutions because of change of command to -0fast.
 
-* Now to verify on RISCV compiler
-  ![Screenshot from 2023-08-20 16-21-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8e9d3334-7030-4749-a193-f4fbe5421678)  
+* Now to verify on RISCV compiler - SPIKE 
+   ![Screenshot from 2023-08-20 16-21-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/68abb024-c7b6-4377-b3e5-c73a7eb904af)
+
 * To Debug, open another terminal
-![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7e29b270-e2d9-4172-a0a5-eaf7a7dd101f)  
+![Screenshot from 2023-08-20 22-31-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/beaf8ce2-e9de-43fc-9be5-db1fd301b40a)
+
 * Back to main terminal
-  ![Screenshot from 2023-08-20 17-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e14d2bf9-4e95-431e-b9e5-5da654346bf9)  
+   ![Screenshot from 2023-08-20 17-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/eb76f402-6831-444e-8fa6-33455af1b9b6)
+
 * From the provided image, you can observe a clear demonstration of the sequential debugging process, illustrating how to proceed through the code one step at a time.
 
