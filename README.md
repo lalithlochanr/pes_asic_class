@@ -104,8 +104,43 @@ The range of unsigned numbers also depends on the number of bits used. For an un
 An Application Binary Interface (ABI) serves as a crucial bridge between software components at the binary level, defining the conventions and rules for communication between different parts of a computer system. It encompasses a set of protocols, data formats, and calling conventions that enable compatibility and interoperability between compiled code, libraries, and the operating system. ABIs ensure that software written in different languages or by different developers can interact seamlessly, allowing for the execution of programs across diverse hardware architectures and operating systems. It dictates aspects such as parameter passing, memory layout, system call invocation, and exception handling, facilitating the development of robust and portable software solutions.  
  ![Screenshot from 2023-08-23 17-49-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1ac42ad1-9ba8-40d8-b87e-ad7fbf2f9f15)  
 
+ ### * MEMORY ALLOCATION
+
+Memory allocation in registers is a fundamental concept in computer architecture where data is temporarily stored in processor registers for faster access than main memory. This technique enhances program performance by reducing memory latency.  
+In RISC-V architecture, double word memory allocation in register refers to storing 64 bits (8 bytes) of data in a single register. This allows for efficient handling of larger data types and operations within the processor, promoting streamlined and optimized computation.  
+![Screenshot from 2023-08-23 17-54-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4e8162b5-fac0-4bf1-82ac-3109a9753847)  
+
+### * BASIC INSTRUCTIONS
+
+* LOAD (LW):  
+Purpose: Used to load data from memory into a register.  
+Syntax: LW rd, offset(rs1)  
+Functionality: Reads a 32-bit word from memory at the address (rs1 + offset) and stores it in register rd.  
+* STORE (SW):  
+Purpose: Used to store data from a register into memory.  
+Syntax: SW rs2, offset(rs1)  
+Functionality: Writes the value from register rs2 into memory at the address (rs1 + offset).  
+
+* ADD (ADD):  
+Purpose: Used to perform integer addition between registers.  
+Syntax: ADD rd, rs1, rs2  
+Functionality: Adds the values of registers rs1 and rs2, then stores the result in register rd.  
+
+* SUBTRACT (SUB):
+Purpose: Used to perform integer subtraction between registers.  
+Syntax: SUB rd, rs1, rs2  
+Functionality: Subtracts the value in register rs2 from the value in register rs1, then stores the result in register rd.
+
+etc.  
+
+![Screenshot from 2023-08-23 14-32-38](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d5fe0c3f-620e-41dc-9b65-d33995edb924)  
+![Screenshot from 2023-08-23 14-32-23](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8fd1e745-fd6e-49ec-a3d8-daefbfbf5a7b)  
+![Screenshot from 2023-08-23 14-53-03](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/c311dad2-0a77-4037-acb7-c3a864f8bf1f)  
+![Screenshot from 2023-08-23 14-53-27](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/908659d7-2f3e-4188-9731-b5cff5d3a9b5)  
 
 
+![Screenshot from 2023-08-23 14-37-46](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1af1a024-6548-4ea2-bf88-d1725e58e5e3)  
+![Screenshot from 2023-08-23 14-38-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7949bae5-e933-4172-aa65-7a48868a0751)  
 
 
 
