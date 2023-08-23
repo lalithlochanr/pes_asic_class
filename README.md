@@ -56,7 +56,7 @@ Restart the terminal.
 * Type main
 * Now you can see there are 12 instrcutions because of change of command to -0fast.
 
-* Now to verify on RISCV compiler - SPIKE 
+### Now to verify on RISCV compiler - SPIKE 
    ![Screenshot from 2023-08-20 16-21-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/68abb024-c7b6-4377-b3e5-c73a7eb904af)
 
 * To Debug, open another terminal
