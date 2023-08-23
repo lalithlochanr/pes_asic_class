@@ -33,7 +33,7 @@ Restart the terminal.
 * Application Binary Interface (ABI): The ABI defines software-hardware interaction; e.g., parameter passing in RISC-V often uses registers like a0, a1 for function arguments and a7 for system calls.  
 * Memory Allocation and Stack Pointer: Stack management is crucial; e.g., the stack pointer (sp) tracks function call frames, and memory allocation functions like malloc allocate dynamic memory, e.g., ptr = malloc(size).  
 
-### 1. Create a simple C program that calculates the sum from 1 to N integers.  
+### Create a simple C program that calculates the sum from 1 to N integers.  
 * Open the terminal.
 * Open any text editor(eg.leafpad) and create a file sum1ton.c 
 ![Screenshot from 2023-08-20 16-18-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/73bbd99a-e44c-4212-85ca-0bf7236d0c0e)
