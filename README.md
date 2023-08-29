@@ -141,7 +141,25 @@ Folders under riscv_workshop_collaterals and its content
 ![Screenshot from 2023-08-23 14-32-38](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d5fe0c3f-620e-41dc-9b65-d33995edb924)  
 ![Screenshot from 2023-08-23 14-32-23](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8fd1e745-fd6e-49ec-a3d8-daefbfbf5a7b)  
 ![Screenshot from 2023-08-23 14-37-46](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1af1a024-6548-4ea2-bf88-d1725e58e5e3)  
-![Screenshot from 2023-08-23 14-38-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7949bae5-e933-4172-aa65-7a48868a0751)  
+![Screenshot from 2023-08-23 14-38-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7949bae5-e933-4172-aa65-7a48868a0751)
+
+## RTL DESIGN using Verilog with SKY130 Technology  
+
+### Introduction to iverilog design (open source simulator) test bench  
+
+<details>
+ <summary> Introduction </summary>
+
+ ### Simulator
+A simulator is a computer program or tool used to replicate real-world processes, systems, or environments for the purpose of analysis, training, or experimentation. It allows users to interact with a virtual representation of a system or scenario, providing insights into how it behaves without the need for real-world implementation. Simulators are widely used across various fields, including engineering, aviation, healthcare, and gaming, to study and understand complex systems in a controlled and safe manner.  
+Simulators work by emulating the underlying dynamics and behaviors of a target system. They use mathematical models, algorithms, and input data to create a simulated environment that responds to user inputs or predefined conditions. As users interact with the simulator, it processes these inputs and computes the corresponding outputs based on the underlying model. This allows users to observe and analyze the system's behavior, responses, and outcomes, enabling experimentation and learning without the risks associated with manipulating real systems directly.  
+</details>
+
+
+
+
+
+
 
 
 
