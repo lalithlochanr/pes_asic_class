@@ -184,7 +184,26 @@ iverilog based simulation flow
 ![Screenshot from 2023-08-29 09-02-26](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f83a6609-10d5-4330-a6b7-4be5d6e3aeda)  
 </details>
 
- 
+* Verilog and testbench file  
+  ![Screenshot from 2023-08-29 09-13-23](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/41e7527b-0739-4295-b5a1-3b30b04cc9cd)
+![Screenshot from 2023-08-29 09-17-27](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ae9924dc-93f7-422f-8172-28e4f0dc7682)
+- Open gtkwave to view waveform  
+
+* The waveform of mux is obtained  
+  - after going to uut under tb_good_mux  
+  - drag and drop the inputs and outputs  
+  - verify the output from inputs for a 2:1 mux by navigating through the waveform
+![Screenshot from 2023-08-29 09-22-00](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/725085fe-9ed8-46a2-9f8e-a6cd3ee7ccbb)  
+
+* Two files of good_mux.v and its testbench  
+![Screenshot from 2023-08-29 09-30-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8f18e2f-2400-4523-977b-e38989ca7ed0)  
+![Screenshot from 2023-08-29 09-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d42b41f9-aac8-45ce-9f91-4c0f9cfe5eec)  
+
+
+  
+
+
+
 </details>
 
 
