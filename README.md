@@ -199,6 +199,13 @@ iverilog based simulation flow
 ![Screenshot from 2023-08-29 09-30-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8f18e2f-2400-4523-977b-e38989ca7ed0)  
 ![Screenshot from 2023-08-29 09-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d42b41f9-aac8-45ce-9f91-4c0f9cfe5eec)  
 
+* Synthesizer
+  - tool used for converting RTL to netlist  
+  - Yosys is synthesizer used here  
+ ![Screenshot from 2023-08-29 09-35-18](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/0b8c9d26-6fe1-4377-bdc9-91a0ea40d6c6)
+- Verifying the synthesis is by gtkwaveform from vcd file of iverilog from netlist and testbench
+![Screenshot from 2023-08-29 09-38-09](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d855904e-8594-4de6-9340-acf7a0b0deff)  
+
 
   
 
