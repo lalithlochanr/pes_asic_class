@@ -168,13 +168,16 @@ iverilog based simulation flow
 
 <details>
  <summary> Labs using iverilog and gtkwave </summary>  
- ![Screenshot from 2023-08-29 08-44-20](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f5859f1d-f459-4a18-abeb-c5f42869a16c)  
+
+ ![Screenshot from 2023-08-29 08-44-20](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1d6c551f-5467-4914-b61f-a135026112db)
+
 
  * git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git  
 ![Screenshot from 2023-08-29 08-56-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b86d9b84-b8eb-411b-b26a-8873f96c98b4)
 
 <details> 
  <summary> Path of all the library files required </summary>
+ 
 ![Screenshot from 2023-08-29 08-56-57](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/24c9ee89-fdb4-4851-be5c-8bcaa603b7f3)  
 ![Screenshot from 2023-08-29 08-59-04](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/c1563020-bfcf-4fba-a008-9c16067152bd)  
 ![Screenshot from 2023-08-29 08-59-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/029f0550-92a3-4555-ab4e-082b642aaf1e)  
