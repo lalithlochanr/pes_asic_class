@@ -199,6 +199,9 @@ iverilog based simulation flow
 ![Screenshot from 2023-08-29 09-30-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8f18e2f-2400-4523-977b-e38989ca7ed0)  
 ![Screenshot from 2023-08-29 09-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d42b41f9-aac8-45ce-9f91-4c0f9cfe5eec)  
 
+<details> 
+ <summary></summary>Yosys and Logic Synthesis </summary>  
+ 
 * Synthesizer
   - tool used for converting RTL to netlist  
   - Yosys is synthesizer used here  
@@ -206,10 +209,48 @@ iverilog based simulation flow
 - Verifying the synthesis is by gtkwaveform from vcd file of iverilog from netlist and testbench
 ![Screenshot from 2023-08-29 09-38-09](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d855904e-8594-4de6-9340-acf7a0b0deff)  
 
+** Logic Synthesis
+* RTL Design
+-behavioural representation of required specification
+
+- Synthesis is RTL to gate level translation with connections made between gates and the file given out is called netlist.
+  ![Screenshot from 2023-08-29 09-42-47](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e0676dbf-0eb2-4933-a22c-61863263fdd3)
+
+- The .lib file holds collection all logical modules including basic gates with different flavors of same gate slow,medium and fast.
+
+![Screenshot from 2023-08-29 09-43-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/de4851b3-bb12-4f28-ab22-2845bd61d0a2)  
+- fclk(max) =1/Tclk(min)
+
+* Why do we need slow cells?
+![Screenshot from 2023-08-29 09-48-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/c3a27b41-5083-4317-8cdc-1c835171fd34)
+
+* Faster Cells vs Slower Cells  
+Faster the charging / discharging of capacitance - Lesser the cell delay  
+- To charge / discharge the capacitance fast, we need transistors capable of sourcing more current  
+- Wider transistors -> Low Delay -> More Area and Power as well   
+- Narrow transistors -> More Delay -> Less Area and Power  
+- Faster cells donot come free, they come at penalty of area and power
+
+** With the help of constraints we need to guide the synthesiser to the optimum choosing of flavor of cells for efficient working  
+
+* More use of faster cells
+  -leads to bad circuit in terms of power and area and also hold time violations
+* More use of slower cells
+  -leads to sluggish circuits amd may not meet the performance needs.
+
+![Screenshot from 2023-08-29 10-04-42](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/48a6a174-a620-4ca3-8009-26f993561829)  
+
+* Open yosys on terminal
+
+
+
+
+
 
   
 
 
+</details>
 
 </details>
 
