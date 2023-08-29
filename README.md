@@ -150,10 +150,41 @@ Folders under riscv_workshop_collaterals and its content
 <details>
  <summary> Introduction </summary>
 
- ### Simulator
+* Simulator
 A simulator is a computer program or tool used to replicate real-world processes, systems, or environments for the purpose of analysis, training, or experimentation. It allows users to interact with a virtual representation of a system or scenario, providing insights into how it behaves without the need for real-world implementation. Simulators are widely used across various fields, including engineering, aviation, healthcare, and gaming, to study and understand complex systems in a controlled and safe manner.  
 Simulators work by emulating the underlying dynamics and behaviors of a target system. They use mathematical models, algorithms, and input data to create a simulated environment that responds to user inputs or predefined conditions. As users interact with the simulator, it processes these inputs and computes the corresponding outputs based on the underlying model. This allows users to observe and analyze the system's behavior, responses, and outcomes, enabling experimentation and learning without the risks associated with manipulating real systems directly.  
+
+* Design
+Structured description of circuits using a hardware description language like Verilog which has intended functionality to meet with required specifications. It outlines how registers and logic elements are interconnected and operate, forming the blueprint for the eventual hardware implementation.
+![Screenshot from 2023-08-29 08-22-09](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/0e7aa501-a0ab-426f-a316-4b49339dd1bd)  
+
+* Simulation
+A testbench is a set of simulation code written to verify the functionality and performance of a digital design described in RTL (Register Transfer Level) by generating stimulus, applying inputs, and comparing outputs to expected results. It aids in identifying design flaws and ensuring the design's correctness before hardware fabrication.
+iverilog based simulation flow 
+![Screenshot from 2023-08-29 08-22-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/32deb679-3003-4d40-8a57-4837497d1949)
+- a vcd(value change dump) is obtained as output of the simulator
+- gtkwave tool - lets you view the waveform
 </details>
+
+<details>
+ <summary> Labs using iverilog and gtkwave </summary>  
+ ![Screenshot from 2023-08-29 08-44-20](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f5859f1d-f459-4a18-abeb-c5f42869a16c)  
+
+ * git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git  
+![Screenshot from 2023-08-29 08-56-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b86d9b84-b8eb-411b-b26a-8873f96c98b4)
+
+<details> 
+ <summary> Path of all the library files required </summary>
+![Screenshot from 2023-08-29 08-56-57](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/24c9ee89-fdb4-4851-be5c-8bcaa603b7f3)  
+![Screenshot from 2023-08-29 08-59-04](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/c1563020-bfcf-4fba-a008-9c16067152bd)  
+![Screenshot from 2023-08-29 08-59-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/029f0550-92a3-4555-ab4e-082b642aaf1e)  
+![Screenshot from 2023-08-29 09-02-26](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f83a6609-10d5-4330-a6b7-4be5d6e3aeda)  
+</details>
+
+ 
+</details>
+
+
 
 
 
