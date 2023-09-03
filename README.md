@@ -175,25 +175,25 @@ iverilog based simulation flow
  - make a directory using command mkdir vsd
  - then cd vsd
 
- ![Screenshot from 2023-08-29 08-44-20](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1d6c551f-5467-4914-b61f-a135026112db)
+ * git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git 
+![Screenshot from 2023-09-03 18-52-01](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/c8660419-7260-4096-93f6-7df8295ead8b)  
+
+* All library files are stored in my_lib  
+-verilog_model : contains standard cell verilog modules in the .lib file   
+-verilog_files : contains verilog source files and testbench files
+
+* cd sky130RTLDesignAndSynthesisWorkshop  
+* cd verilog_files  
+![Screenshot from 2023-09-03 18-58-44](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/9e776502-a51e-4efa-b3b5-09bae149fdfc)
+![Screenshot from 2023-09-03 19-00-44](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8a2b7d24-0bb4-436e-8a28-1b4362022fb7)  
 
 
- * git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git  
-![Screenshot from 2023-08-29 08-56-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b86d9b84-b8eb-411b-b26a-8873f96c98b4)
-
-<details> 
- <summary> Path of all the library files required </summary>
- 
-![Screenshot from 2023-08-29 08-56-57](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/24c9ee89-fdb4-4851-be5c-8bcaa603b7f3)  
-![Screenshot from 2023-08-29 08-59-04](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/c1563020-bfcf-4fba-a008-9c16067152bd)  
-![Screenshot from 2023-08-29 08-59-19](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/029f0550-92a3-4555-ab4e-082b642aaf1e)  
-![Screenshot from 2023-08-29 09-02-26](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f83a6609-10d5-4330-a6b7-4be5d6e3aeda)  
-</details>
 
 * Verilog and testbench file  
-  ![Screenshot from 2023-08-29 09-13-23](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/41e7527b-0739-4295-b5a1-3b30b04cc9cd)
-![Screenshot from 2023-08-29 09-17-27](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ae9924dc-93f7-422f-8172-28e4f0dc7682)
+ ![Screenshot from 2023-09-03 19-05-16](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/228e3a53-f63d-459c-9a5c-30d95622ff06)
+
 - Open gtkwave to view waveform  
+![Screenshot from 2023-09-03 19-05-26](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/65228ea8-64f9-488b-bb35-600390348b61)
 
 * The waveform of mux is obtained  
   - after going to uut under tb_good_mux  
