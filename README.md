@@ -306,6 +306,20 @@ sudo make install
 ![Screenshot from 2023-09-03 19-29-31](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d3b76302-06ca-47d3-a3f4-6235229a2d50)  
 ![Screenshot from 2023-09-03 19-29-56](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8fbca4e9-9e67-4a04-baaa-e87ed73f757e)  
 
+* Explanation of realization of two input mux
+![Screenshot from 2023-09-03 19-40-47](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/71414591-cdf4-4069-8f98-c4cd72da91db)
+
+* write netlist using command: write_verilog good_mux_netlist.v
+* then open command using: !vim good_mux_netlist.v
+![Screenshot from 2023-09-03 19-45-28](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/44a086ba-c8e8-4560-a9e1-93840889e34a)  
+![Screenshot from 2023-09-03 19-45-34](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/84a6a5a7-cbf5-4f98-9947-e02417ee08df)  
+![Screenshot from 2023-09-03 19-44-55](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7d9f897e-5919-44bc-a043-3a84f03660b7)  
+
+** To view simplified netlist  
+* write netlist using command: write_verilog -noattr good_mux_netlist.v  
+* then open command using: !vim good_mux_netlist.v  
+![Screenshot from 2023-09-03 19-51-00](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/9334dce3-df54-45ea-844b-4c97ddc5c229)  
+![Screenshot from 2023-09-03 19-50-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ac278f1e-508f-4e5c-b108-5abd94a3ba6d)  
 
 </details>
 
