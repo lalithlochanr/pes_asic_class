@@ -1,4 +1,4 @@
-![image](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/78c6e3a7-159c-49a4-9412-4cd2bc772bb0)# Physical VLSI Design for ASIC
+# Physical VLSI Design for ASIC
 (Guided by Kunsal Ghosh)
 
 ## Objective
