@@ -640,6 +640,465 @@ write_verilog -noattr mult8_netlist.v
 
 </details>
 
+### Day 5
+#### Combinational and Sequential optimizations
+<details>
+ <summary>Introductions to optimizations</summary>
+
+* Combinational Logic Optimisation
+
+1.Squeezing the logic to get the most optimised design
+-Area and Power savings
+
+2.Constant Propagation
+-Direct Optimisation
+
+3.Boolean Logic Optimisation
+-K-Map
+-Quine McKluskey
+
+* Sequential logic Optimisation
+1.Basic
+-Sequential Constant propagation
+
+2.Advanced
+-State optimisation
+-Retiming
+-Sequential Logic Cloning (Floor Plan Aware Synthesis)
+
+</details>
+
+<details>
+ <summary> Combinational Logic Optimizations </summary>
+<details>
+ <summary> opt_check</summary>
+
+ ````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+gvim opt_check.v
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog opt_check.v
+
+synth -top opt_check
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 02-05-55](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f7f10495-4986-4496-8cb4-89717427c2e4)
+![Screenshot from 2023-09-04 02-06-18](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b03eb181-69f8-4f75-a3e2-fcfe2b8944eb)
+![Screenshot from 2023-09-04 02-08-18](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/5074021d-5d65-45c4-a8e2-2d2fcec98c97)
+![Screenshot from 2023-09-04 02-09-29](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ea9a9bb2-2f32-4f7a-af7a-01461b1f9676)
+
+</details>
+
+<details>
+ <summary> opt_check2 </summary>
+ 
+ ````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+gvim opt_check2.v
+
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog opt_check2.v
+
+synth -top opt_check2
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 02-14-29](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8911da1f-5264-4114-9fe9-2de671b2e17b)
+![Screenshot from 2023-09-04 02-15-33](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/3f13a289-efb6-491f-ad01-83253faf358e)
+![Screenshot from 2023-09-04 02-16-26](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e383aa64-c344-4b03-bcfe-c8967a0d94ad)
+
+</details>
+
+<details>
+ <summary>opt_check3</summary>
+
+ ````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+gvim opt_check3.v
+
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog opt_check3.v
+
+synth -top opt_check3
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 02-18-35](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/cf371d0b-dde6-4157-af30-8e9f45e26cfa)
+![Screenshot from 2023-09-04 02-19-14](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/29b34ec1-dde5-45c5-8511-f96f25350e9f)
+![Screenshot from 2023-09-04 02-19-38](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/3cea66a4-4a2f-46d7-94d4-f68c4e4d733f)
+
+</details>
+
+<details>
+ <summary>opt_check4</summary>
+
+ ````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+gvim opt_check4.v
+
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog opt_check4.v
+
+synth -top opt_check4
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 02-29-06](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/49b0c511-3400-4941-a9c0-ece7e2c922ca)
+![Screenshot from 2023-09-04 02-29-30](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/a03a0e3c-3609-44b1-bc04-fb12e5bd335f)
+![Screenshot from 2023-09-04 02-29-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7947607a-c8ad-4dc0-9d13-2bc5f967ff4e)
+
+
+</details>
+
+<details>
+ <summary> multiple_module_opt </summary>
+
+  ````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+gvim multiple_module_opt.v
+
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog multiple_module_opt.v
+
+synth -top multiple_module_opt
+
+flatten
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 02-35-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/22154e3a-29f4-441e-ad54-38a41b697a2c)
+![Screenshot from 2023-09-04 02-36-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b98d744b-2a4f-4c47-bfa2-1af3a4fd82a6)
+![Screenshot from 2023-09-04 02-36-46](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/149b6965-2a71-47a8-8592-21f489518c60)
+![Screenshot from 2023-09-04 02-37-59](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7646be9f-db3a-4e03-82ff-f58ee107e0e4)
+
+</details>
+
+<details> 
+ <summary>Sequential Logic</summary>
+<details>
+ <summary>dff_const1</summary>
+
+ ````
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ 
+ gvim dff_const1.v
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+ iverilog dff_const1.v tb_dff_const1.v
+
+ ./a.out
+
+ gtkwave tb_dff_const1.vcd
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog dff_const1.v
+
+synth -top dff_const1
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+````
+
+![Screenshot from 2023-09-04 02-43-54](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f7158103-855c-43fe-8a4f-167d3197f862)
+![Screenshot from 2023-09-04 02-46-24](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/6b2acd13-2746-4d94-aca3-8edfb00d1fe7)
+![Screenshot from 2023-09-04 02-47-35](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d3635f1e-3ab5-435d-9295-cac9ea8a7d77)
+![Screenshot from 2023-09-04 02-48-15](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/37062bce-4323-446b-9b4e-6ba441458555)
+
+</details>
+
+<details>
+ <summary>dff_const2</summary>
+
+ ````
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ 
+ gvim dff_const2.v
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+ iverilog dff_const2.v tb_dff_const2.v
+
+ ./a.out
+
+ gtkwave tb_dff_const2.vcd
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog dff_const2.v
+
+synth -top dff_const2
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+````
+![Screenshot from 2023-09-04 02-50-57](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/64acf4fc-085b-4fe4-82e1-d5512a217299)
+![Screenshot from 2023-09-04 02-53-17](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/6d2a2023-48b1-4cc3-8ccb-4312a2dadafb)
+![Screenshot from 2023-09-04 02-53-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7ee62cdb-b859-4097-a0dc-721c3990d7a3)
+![Screenshot from 2023-09-04 02-54-11](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/adfc7166-8862-4377-8977-b02fd04f94e3)
+
+
+
+</details>
+
+<details>
+ <summary>dff_const3</summary>
+
+ ````
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ 
+ gvim dff_const3.v
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+ iverilog dff_const3.v tb_dff_const3.v
+
+ ./a.out
+
+ gtkwave tb_dff_const3.vcd
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog dff_const3.v
+
+synth -top dff_const3
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+````
+![Screenshot from 2023-09-04 02-56-40](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/70d193dc-0e02-4f5b-81ab-07844ee97d24)
+![Screenshot from 2023-09-04 02-58-01](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/9d26f8b4-a985-4dd8-9506-bee12423cd88)
+![Screenshot from 2023-09-04 02-58-25](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/2d9cdd9d-3aa2-4f4e-ba87-ad43bb7acd05)
+![Screenshot from 2023-09-04 02-58-49](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/2f214d22-3627-463e-bb0f-2a7e9554cf5f)
+
+</details>
+
+<details>
+ <summary>dff_const4</summary>
+
+ ````
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ 
+ gvim dff_const4.v
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+ iverilog dff_const4.v tb_dff_const4.v
+
+ ./a.out
+
+ gtkwave tb_dff_const4.vcd
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog dff_const4.v
+
+synth -top dff_const4
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+````
+![Screenshot from 2023-09-04 03-05-43](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7c5bfa05-f3e3-4835-a480-041566c1dc50)
+![Screenshot from 2023-09-04 03-07-27](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/0c689153-7c98-4870-84e6-6b6cb2fecf6c)
+![Screenshot from 2023-09-04 03-08-02](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/5056054e-1d85-4f8d-b453-c7af9760e195)
+![Screenshot from 2023-09-04 03-08-15](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/6182c8e0-b352-4e23-b598-5d47341e04b0)
+
+</details>
+
+<details>
+ <summary>dff_const5</summary>
+
+ ````
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ 
+ gvim dff_const5.v
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+ iverilog dff_const5.v tb_dff_const5.v
+
+ ./a.out
+
+ gtkwave tb_dff_const5.vcd
+
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog dff_const5.v
+
+synth -top dff_const5
+
+opt_clean -purge
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+````
+![Screenshot from 2023-09-04 03-09-46](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4a20dab3-db28-4e88-9d62-5ff96520adf8)
+![Screenshot from 2023-09-04 03-10-30](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b89fb7f8-e104-4701-9aaf-287285c1dae5)
+![Screenshot from 2023-09-04 03-10-56](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/5df7549a-bee1-458f-92f2-3216dfb49ed6)
+![Screenshot from 2023-09-04 03-14-41](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/90fbcbf6-2576-46f6-b14b-66588fe3cd5f)
+
+</details>
+
+</details>
+
+<details>
+ <summary> Sequential Logic for Unused Outputs</summary>
+ 
+<details>
+<summary> counter_opt </summary>
+
+ ````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+gvim counter_opt.v
+
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog counter_opt.v
+
+synth -top counter_opt
+
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+````
+![Screenshot from 2023-09-04 03-19-47](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f101d988-2f27-4d52-a646-6c42c7d423d4)
+![Screenshot from 2023-09-04 03-20-42](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/af5b7da8-552d-45f9-b44b-c7f1413832ea)
+![Screenshot from 2023-09-04 03-21-38](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4b3ab355-26dd-403d-a997-4c1add151b2f)
+
+</details>
+
+<details>
+<summary> counter_opt2 </summary>
+
+ ````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+gvim counter_opt2.v
+
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog counter_opt2.v
+
+synth -top counter_opt
+
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+
+````
+![Screenshot from 2023-09-04 03-23-42](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/03ea848e-402b-4e26-84cb-950f7109bc72)
+![Screenshot from 2023-09-04 03-26-30](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/af38f5b2-693e-48b4-a356-e911753004c9)
+![Uploading Screenshot from 2023-09-04 03-27-01.png…]()
+
+</details>
+
+</details>
+ 
+</details>
+
 
 
 
