@@ -197,7 +197,9 @@ iverilog based simulation flow
 
 * Two files of good_mux.v and its testbench  
 ![Screenshot from 2023-08-29 09-30-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b8f18e2f-2400-4523-977b-e38989ca7ed0)  
-![Screenshot from 2023-08-29 09-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d42b41f9-aac8-45ce-9f91-4c0f9cfe5eec)  
+![Screenshot from 2023-08-29 09-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d42b41f9-aac8-45ce-9f91-4c0f9cfe5eec)
+
+</details>
 
 <details> 
  <summary> Yosys and Logic Synthesis </summary>  
@@ -244,13 +246,6 @@ Faster the charging / discharging of capacitance - Lesser the cell delay
 
 
 
-
-
-
-  
-
-
-</details>
 
 </details>
 
