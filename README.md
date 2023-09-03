@@ -823,6 +823,8 @@ show
 
 </details>
 
+</details>
+
 <details> 
  <summary>Sequential Logic</summary>
 <details>
