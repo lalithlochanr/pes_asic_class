@@ -1101,8 +1101,120 @@ show
  
 </details>
 
+### Day 6
+
+#### GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+
+<details>
+ <summary> GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements </summary>
+ 
+* GLS is GATE LEVEL SIMULATION     
 
 
+* What is GLS?  
+-Running the test bench with Netlist as Design Under Test.  
+-Netlist is logically same as RTL Code.  
+  -Same Test Bench will align with the Design.  
+
+* Why GLS?  
+-Verify the logical correctness of design after synthesis  
+-Ensuring the timing of the design is met.  
+  -For this GLS needs to be run with delay annotation.  
+
+![Screenshot from 2023-09-04 04-28-20](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ea0acd39-2602-4176-a7c9-0cf019c3fa91)  
+
+* Gate level models  
+  - Timing aware(functionality+timing) validation  
+  - Functional validation   
+
+* Synthesis-Simulation mismatch  
+  A synthesis-simulation mismatch is a discrepancy between the expected behavior of a digital circuit during the design phase (synthesis) and its actual behavior during simulation. It often occurs due to timing issues, optimization, modeling errors, or simulation setup problems and requires debugging to ensure the circuit functions correctly.  
+
+*Some examples of why synthesis simulation mismatch  
+
+*Missing Sensitivity List  
+Not including all relevant signals into the always block. This can lead to a synthesis-simulation mismatch where the simulation works as expected, but the synthesized hardware behaves differently.  
+
+*Blocking and Non-Blocking Statements in verilog  
+ 
+ Blocking Statements:  
+
+ Sequential Execution: Blocking assignments (=) are used for sequential execution within an always block. This means that statements are executed one   after the other in the order they appear in the code.  
+ Simulation-Synthesis Mismatch (Blocking): In simulation, blocking assignments behave predictably and are often used for testbench modeling. However,   when it comes to synthesis, blocking assignments can lead to mismatches because synthesis tools might optimize the order of execution differently,     potentially causing differences in behavior between simulation and the actual synthesized hardware.  
+
+ Non-Blocking Statements:  
+
+ Parallel Execution: Non-blocking assignments (<=) are used for parallel execution within an always block. This means that all non-blocking             assignments within the same block are executed concurrently, without regard to the order in which they appear.  
+ Simulation-Synthesis Mismatch (Non-Blocking): Non-blocking assignments are generally preferred for synthesizable RTL (Register-Transfer Level) code    because they accurately model parallel hardware behavior. However, if you misuse non-blocking assignments or use them inappropriately in simulation-   only code, it can lead to mismatches, as the simulation might behave differently due to the concurrent execution of assignments.  
+    
+-Synthesis-Simulation mismatches:
+Blocking assignments are sequentially executed and can lead to mismatches when synthesis tools optimize differently.
+Non-blocking assignments represent parallel hardware behavior and can lead to mismatches if misused or applied to non-synthesizable constructs in simulation-only code.
+
+* Cavets with Blocking statements
+
+1. Order of Execution(Sequential): Blocking assignments (`=`) specify a strict sequential order of execution within an `always` block. Each statement is executed one after the other, following the order in the code.  
+
+2. Potential for Mismatches: Synthesis tools aim to optimize hardware for area, speed, and other factors. They may re-order or parallelize operations differently than the strict sequential execution implied by blocking assignments. This can result in significant mismatches between simulation and synthesized hardware behavior.  
+
+3. Race Conditions: In some cases, blocking assignments can introduce race conditions in simulation that don't exist in hardware. For instance, if multiple signals are updated sequentially in a clocked `always` block using blocking assignments, it can create a race condition that doesn't accurately represent the behavior of flip-flops and combinatorial logic in the synthesized design.  
+
+4. Debugging Challenges: Synthesis-simulation mismatches stemming from the use of blocking assignments can be challenging to debug. The code may work correctly in simulation but fail in actual hardware due to optimizations made by the synthesis tool. Debugging such issues often requires a deep understanding of both Verilog and the specific synthesis tool's optimization techniques.  
+
+5. Best Practices: To mitigate synthesis-simulation mismatches related to blocking assignments, it's essential to follow best practices. This includes using non-blocking assignments (`<=`) for sequential logic, avoiding race conditions, and ensuring that the Verilog code accurately represents the intended hardware behavior. Behavioral simulations may often suffice with blocking statements to model functionality, but RTL simulations require a meticulous choice between blocking and non-blocking assignments to accurately replicate hardware behavior and minimize synthesis-simulation mismatches.
+
+</details>
+
+<details>
+ <summary> Labs on GLS and Synthesis-Simulation Mismatch </summary>
+ <details> 
+  <summary>ternary_operator_mux</summary>
+ 
+  ````
+  cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+  
+  gvim ternary_operator_mux.v
+  ````
+
+![Screenshot from 2023-09-04 04-57-04](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/9997b190-c4db-4a40-9b33-f7a788ce08ec)
+
+* Simulation
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+
+./a.out
+
+gtkwave tb_ternary_operator_mux.vcd
+
+````
+![Screenshot from 2023-09-04 04-57-04](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/52d74153-170c-4a26-a55a-674013ad60cb)
+
+* Synthesis
+  
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog ternary_operator_mux.v
+
+synth -top ternary_operator_mux
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 05-02-14](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d29ef34a-c7fd-43fc-a720-f75c4bc356b9)
+![Screenshot from 2023-09-04 05-02-34](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/cf99a79a-164e-4916-8d3d-73363837f099)
+
+
+
+ </details>
+</details>
 
 
 
