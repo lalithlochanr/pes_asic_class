@@ -1189,7 +1189,8 @@ iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
 gtkwave tb_ternary_operator_mux.vcd
 
 ````
-![Screenshot from 2023-09-04 04-57-04](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/52d74153-170c-4a26-a55a-674013ad60cb)
+![Screenshot from 2023-09-04 04-59-52](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/9d806333-605f-461e-8a43-9e4a8ed4b2dd)
+
 
 * Synthesis
   
@@ -1211,9 +1212,43 @@ show
 ![Screenshot from 2023-09-04 05-02-14](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d29ef34a-c7fd-43fc-a720-f75c4bc356b9)
 ![Screenshot from 2023-09-04 05-02-34](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/cf99a79a-164e-4916-8d3d-73363837f099)
 
+* GLS
+````
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
 
+./a.out
 
- </details>
+gtkwave tb_ternary_operator_mux.vcd
+
+````
+![Screenshot from 2023-09-04 04-59-52](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/74b8c697-24a8-4ac8-afda-ea43e033ef92)
+
+</details>
+
+<details>
+ <summary>bad_mux</summary>
+ 
+ ````
+ cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+ 
+ gvim bad_mux.v
+ ````
+![Screenshot from 2023-09-04 04-59-52](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ae3f64a0-d5b6-4bc9-84cd-674fc40eb351)
+
+* Simulation
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+iverilog bad_mux.v tb_bad_mux.v
+
+./a.out
+
+gtkwave tb_bad_mux.vcd
+
+````
+![Screenshot from 2023-09-04 05-11-33](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b6fa5f48-f251-4748-9ea3-a05f6f0e15da)
+
+</details>
 </details>
 
 
