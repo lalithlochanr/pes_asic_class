@@ -345,7 +345,7 @@ tt- typical process(type)
 </details>
 
 <details>
- <summary> Heirarchial V/s Flat Synthesis </summary>
+ <summary> Heirarchial v/s Flat Synthesis </summary>
  
  ### Heirarchial Synthesis
  
