@@ -288,7 +288,23 @@ sudo make install
 
 10. `read_xdc`: When working with Xilinx FPGAs, the "read_xdc" command is used to read Xilinx Design Constraints (XDC) files, which define placement and routing constraints for the design.
 
-![Screenshot from 2023-09-03 18-29-54](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/50112270-42b0-4c85-b33d-42faacc99f1f)
+* Open Yosys at the verilog_files path
+* read library using command: read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+* read design using command: read_verilog good_mux.v
+
+![Screenshot from 2023-09-03 19-16-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/2413d7da-388d-430e-b4d3-4c83828f4a4a)  
+
+* Use synth -top good_mux to synthesize good_mux module
+![Screenshot from 2023-09-03 19-24-30](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/a5f55e3d-3ced-448b-ad94-b682f28e8056)  
+![Screenshot from 2023-09-03 19-21-39](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d4203c0d-471f-4752-ae6d-1529923052eb)  
+
+* realize the logic in library using command:  abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+![Screenshot from 2023-09-03 19-23-27](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/0243d0aa-0f5f-4666-b858-069350a2c3e0)  
+![Screenshot from 2023-09-03 19-27-41](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/a893727a-ffed-4e05-b028-365c5d86682b)
+
+* to show the logic that is realized tht command used is: show
+![Screenshot from 2023-09-03 19-29-31](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d3b76302-06ca-47d3-a3f4-6235229a2d50)  
+![Screenshot from 2023-09-03 19-29-56](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8fbca4e9-9e67-4a04-baaa-e87ed73f757e)  
 
 
 </details>
