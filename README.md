@@ -432,7 +432,7 @@ So the key difference is that hierarchy synthesis maintains the hierarchical str
 
 - Synchronization: The D flip-flop with asynchronous reset helps synchronize and control the timing of data transitions in sequential logic circuits, ensuring proper behavior during both normal operation and exceptional conditions.  
 
-* !gvim dff_asyncres.v
+* gvim dff_asyncres.v
 ![Screenshot from 2023-09-03 21-37-01](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1bb9dbc7-0e80-4129-bda3-b4c1ce4b9bba)
 
 * Simulation(Outside of yosys)
@@ -445,7 +445,28 @@ So the key difference is that hierarchy synthesis maintains the hierarchical str
 
 ![Screenshot from 2023-09-03 22-10-05](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4084290c-faac-49ab-a993-a0882c264039)
 
-![Screenshot from 2023-09-03 22-04-15](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/18115d55-c7fa-4d14-b603-9c885ad0a8b6)   
+![Screenshot from 2023-09-03 22-04-15](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/18115d55-c7fa-4d14-b603-9c885ad0a8b6) 
+
+* Synthesis
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog dff_asyncres.v
+
+synth -top dff_asyncres
+
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-03 23-08-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ffaa5031-50a1-4743-b962-8022c57131d5)
+
 
   
 
@@ -460,7 +481,7 @@ So the key difference is that hierarchy synthesis maintains the hierarchical str
 
 * Synchronization: The synchronous reset feature ensures that the reset operation is synchronized with the clock signal, making it suitable for controlling the state of flip-flops and data paths in sequential logic circuits, ensuring consistent and reliable operation.
 
-* !gvim dff_syncres.v
+* gvim dff_syncres.v
 ![Screenshot from 2023-09-03 21-49-43](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e86541ed-6199-4d12-b996-46b8dd8a30b6)
 
 * Simulation(outside of yosys)
@@ -472,6 +493,20 @@ gtkwave tb_dff_syncres.vcd
 ```` 
 ![Screenshot from 2023-09-03 22-12-29](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/98c1ca99-ae0f-4d35-90b5-a529d31b074d)  
 ![Screenshot from 2023-09-03 22-12-16](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/78722d28-fbfd-4323-b618-f71a3e46796d)  
+
+* Synthesis
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_syncres.v
+synth -top dff_syncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+````
+![Screenshot from 2023-09-03 23-10-28](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/73aca21b-f654-4c5c-a32a-b4863de5fc84)
+
 
 
 #### D Flip Flop with Asynchronous Set  
@@ -486,7 +521,7 @@ gtkwave tb_dff_syncres.vcd
 
 * Synchronization: The D flip-flop with asynchronous set helps synchronize and control the timing of data transitions in sequential logic circuits, ensuring proper behavior during both normal operation and exceptional conditions.  
   
-* !gvim dff_async_set.v
+* gvim dff_async_set.v
 ![Screenshot from 2023-09-03 21-53-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8094e53f-bbdc-4e99-b78c-aa1fe0c8c9b4)
 
 * Simulation(Outside of Yosys)
@@ -498,9 +533,19 @@ gtkwave tb_dff_async_set.vcd
 ````
 ![Screenshot from 2023-09-03 22-18-58](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/df4a571d-1df3-49a7-b1af-1646f169e89f)
 ![Screenshot from 2023-09-03 22-19-27](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/775657df-cab1-4bc6-840c-4254bffda128)
+* Synthesis
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_async_set.v
+synth -top dff_async_set
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+````
+![Screenshot from 2023-09-03 23-13-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4ac273dc-2a76-4753-b4bd-41d2eecd4666)
 
-
- 
 
 
 
@@ -518,7 +563,7 @@ gtkwave tb_dff_async_set.vcd
 
 * Synchronization: It aids in synchronizing data transitions and provides flexible reset options, accommodating different design requirements, such as initialization, error recovery, or controlled state changes during specific clock cycles.
 
-* !gvim dff_asyncres_syncres.v
+* gvim dff_asyncres_syncres.v
 ![Screenshot from 2023-09-03 21-55-41](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/6bf78b4a-7aa2-47f4-956b-f54423d5e53d)
 *Simulation(Outside of Yosys)
 ````
@@ -528,10 +573,73 @@ iverilog dff_asyncres_syncres.v tb_dff_asyncres_syncres.v
 gtkwave tb_dff_asyncres_syncres.vcd
 ````
 ![Screenshot from 2023-09-03 22-27-43](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4f4c6dc3-0230-4abf-9a6a-ecda234500b7)
-![Screenshot from 2023-09-03 22-27-53](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/797c66bd-58ce-4297-a433-ae744276eb24)
+![Screenshot from 2023-09-03 22-27-53](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/797c66bd-58ce-4297-a433-ae744276eb24)  
+* Synthesis
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_asyncres_syncres.v
+synth -top dff_asyncres_syncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+````
+![Screenshot from 2023-09-03 23-15-52](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/cef54d29-d0d7-41a8-8486-703611c4ee5f)  
+
+</details>
+<details>
+<summary>Interesting Optimizations</summary>
+* Outside of Yosys
+* gvim mult_2.v
+ 
+![Screenshot from 2023-09-03 23-24-44](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/2dda0623-34eb-4a9b-b79e-cf27f16ce522)
+
+````
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_2.v
+synth -top mul2
+````
+![Screenshot from 2023-09-03 23-26-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/08e77f94-a021-469a-81fd-a5edb52f5176)  
+
+````
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+````
+![Screenshot from 2023-09-03 23-27-44](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/db7b2dfc-a79e-4d5e-873f-866f90e6ee6b)
+
+````
+write_verilog -noattr mul2_netlist.v
+!gvim mul2_netlist.v
+````
+![Screenshot from 2023-09-03 23-29-59](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1517e29e-c925-461c-965e-6925d3a0cb7c)
+
+* !gvim mult_8.v
+![Screenshot from 2023-09-03 23-31-34](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f209f693-a0f1-4f5d-a0f1-ddcbd7835bab)
+
+````
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+read_verilog mult_8.v
+synth -top mult8
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+````
+![Screenshot from 2023-09-03 23-33-12](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/2bb81941-bf23-4c66-b1ba-1e136211ef2d)  
+
+![Screenshot from 2023-09-03 23-33-51](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/965d4559-6492-4cb1-b196-e58e0816f399)
+
+````
+yosys
+write_verilog -noattr mult8_netlist.v
+!gvim mult8_netlist.v
+````
+![Screenshot from 2023-09-03 23-35-26](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7ff13d84-a272-41d1-ad61-66f84f66a544)
 
 
 </details>
+
 
 
 
