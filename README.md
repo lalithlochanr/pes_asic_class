@@ -323,6 +323,81 @@ sudo make install
 
 </details>
 
+### Day 4
+### Timing libs,heirarchial v/s flat synthgesis and efficient flop coding styles
+
+<details>
+ <summary> Introduction to timing.libs </summary>    
+* Introduction to Dot lib  
+ - To view the contents in the .lib file use command: vim ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+ ![Screenshot from 2023-09-03 20-01-25](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/2214cc47-613f-4cf6-83b9-f9a9a2cdf1a2)
+ -Additional information required can be obtained in the file as shown above like CMOS,different flavors of cell,area(area inversely proportional to delay and directionly proportional to power), etc.  
+** Here the line "library ("sky130_fd_sc_hd__tt_025C_1v80")"  gives you the name of library and from it we can infer some information.   
+ - Important parameters for variation (eg. machine variation, voltage variation, etc)  
+ * P - Process - Variations due to fabrication    
+ * V - Voltage  
+ * T - Temperature  
+ so we need to factorize all these variations for effficient working.  
+tt- typical process(type)  
+025C- indicates temperature  
+1v8- indicates voltage  
+ 
+</details>
+
+<details>
+ <summary> Heirarchial V/s Flat Synthesis </summary>
+ 
+ ### Heirarchial Synthesis
+ 
+ * gvim multiple_modules.v
+ 
+ ![Screenshot from 2023-09-03 20-34-44](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b6bc7bca-dba2-445d-ae4e-37c293615186)  
+
+ * Launch yosys    
+ * read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+ * read_verilog multiple_modules.v    
+ * synth -top multiple_modules  
+   ![Screenshot from 2023-09-03 20-42-56](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/5446a193-e027-4754-a8d6-0eaeb536c065)  
+   ![Screenshot from 2023-09-03 20-44-08](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/404e59c2-7807-4f80-8ed5-9e7cc07641fe)
+
+ * abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+   ![Screenshot from 2023-09-03 20-45-00](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/0bab2ccf-3986-45ce-93cc-0e99f4b88cb9)
+
+ * show multiple_modules  
+   ![Screenshot from 2023-09-03 20-45-45](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/35d1f989-6c5a-4e46-b85a-6ecc3fe2f5c8)
+
+![Screenshot from 2023-09-03 20-46-21](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ef0f7622-e6ca-4a32-91c4-eb2b1e346877)
+
+* The Heirarchial result of netlist   
+*  write_verilog -noattr multiple_modules_hier.v  
+*  !gvim multiple_modules_hier.v
+*  So here we can the heirarchy preserved with respect to sub modules.
+![Screenshot from 2023-09-03 20-49-03](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/69ff405b-2cf3-41e5-a417-99c066dd7bef)
+-(Stacked NMOS is GOOD)
+-(Stacked PMOS is BAD)
+
+### Flattened Synthesis
+* yosys
+* read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+* read_verilog multiple_modules.v
+* synth -top multiple_modules
+* abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+* flatten
+* show
+![Screenshot from 2023-09-03 21-03-38](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/f275c7b2-3f1e-43fb-bbbc-df4c3f8555da)
+
+* write_verilog -noattr multiple_modules_flat.v
+* !gvim multiple_modules_flat.v
+** The submodules are not preserved as in heirarchy in Flattened synthesis.
+  ![Screenshot from 2023-09-03 21-06-11](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/195ef32e-acce-4ab4-85f2-85b5790a63f5)
+
+So the key difference is that hierarchy synthesis maintains the hierarchical structure of the design, while flattened synthesis removes all hierarchy, treating the entire design as a single-level entity.  
+
+** Why sub-modules of top module??
+- Used for divide and conquer also when multiple instances of same module is present.
+
+</details>
+
 
 
 
