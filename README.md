@@ -1,4 +1,4 @@
-# Physical VLSI Design for ASIC
+![image](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/78c6e3a7-159c-49a4-9412-4cd2bc772bb0)# Physical VLSI Design for ASIC
 (Guided by Kunsal Ghosh)
 
 ## Objective
@@ -395,6 +395,103 @@ So the key difference is that hierarchy synthesis maintains the hierarchical str
 
 ** Why sub-modules of top module??
 - Used for divide and conquer also when multiple instances of same module is present.
+
+</details>
+
+<details>
+ <summary> Various Flop Coding Styles and Optimization </summary>
+ 
+ ### Why Flop and Flop coding style
+ 
+ * Glitch
+   - A glitch is a temporary and unintended pulse or fluctuation in the output of a digital logic circuit that occurs due to transient changes in input signals.  
+   - Glitches can happen when signals in a combinatorial logic circuit propagate at different speeds, causing momentary incorrect outputs before settling to the correct logic level.  
+   - Proper design techniques, like adding hazard detection and correction logic or using synchronous design practices, can help minimize or eliminate glitches.
+  
+   * Flip-Flop
+   -A flip-flop is a fundamental digital electronic circuit element used to store and control binary information (0 or 1). It is a bistable multivibrator, meaning it has two stable states and can be used to store a single binary bit of data and is also a flip flop is edge triggered.  
+   - Flip-Flops are essential components in digital circuits that help mitigate glitches by providing latching behavior, synchronizing data, and enabling glitch-avoidance techniques in the design. Their role in controlling the timing and stability of signals is critical for reliable circuit operation.  
+
+1. Latching Behavior: Flip-flops are designed to capture and hold a digital value until a clock edge. This latching behavior helps prevent glitches from propagating through the circuit. When an input signal experiences a glitch, the flip-flop typically filters it out and ensures only stable values are passed to subsequent stages.  
+
+2. Synchronization: Flip-flops play a key role in synchronizing data in sequential circuits. Data is sampled and synchronized with the clock signal, minimizing the chances of glitches causing incorrect data transitions between different parts of the circuit.  
+
+3. Glitch Avoidance: Flip-flops are often used to eliminate glitches intentionally. By properly designing the combinational logic feeding into a flip-flop, it's possible to avoid generating glitches in the first place. This is achieved by ensuring that inputs to the flip-flop switch only during a specific clock phase, reducing the likelihood of glitches.
+
+    #### D FLIP FLOP
+
+* D Flip Flop with Asynchronous Reset
+
+- Data Storage: It stores a single binary bit (0 or 1) of data.  
+
+-Asynchronous Reset: It has an additional input called "RESET" or "CLR" (clear), which when asserted (typically set to logic 0), immediately forces the output Q to 0, irrespective of the clock or data input.  
+
+- Clock-Controlled: Like other flip-flops, it's edge-triggered and changes its output state (Q) on the rising or falling edge of a clock signal.  
+
+- Memory Element: It's commonly used in digital systems to create memory elements that can be cleared asynchronously to a specific state (usually 0) for initialization or error recovery purposes.  
+
+- Synchronization: The D flip-flop with asynchronous reset helps synchronize and control the timing of data transitions in sequential logic circuits, ensuring proper behavior during both normal operation and exceptional conditions.  
+
+* !gvim dff_asyncres.v
+![Screenshot from 2023-09-03 21-37-01](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1bb9dbc7-0e80-4129-bda3-b4c1ce4b9bba)
+
+* Simulation(Outside of yosys)
+  ''''
+  cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+  iverilog dff_asyncres.v tb_dff_asyncres.v
+  ./a.out
+  gtkwave tb_dff_asyncres.vcd
+  ''''
+  
+![Screenshot from 2023-09-03 22-04-15](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/18115d55-c7fa-4d14-b603-9c885ad0a8b6)   
+
+  
+
+* D Flip Flop with Synchronous Reset
+* Data Storage: It can store a single binary bit (0 or 1) of data.  
+
+* Synchronous Reset: It includes a reset input (often labeled "RST" or "CLR") that, when asserted, synchronously forces the output Q to a known state (usually logic-low, 0) on the clock edge. Unlike asynchronous reset, this reset operation occurs in coordination with the clock signal.  
+
+* Clock-Controlled: Similar to other flip-flops, it operates on the rising or falling edge of a clock signal. The output state (Q) changes only when the clock edge occurs.  
+
+* Memory Element: D flip-flops with synchronous reset are widely used in digital systems to create memory elements that can be cleared synchronously to a known state as part of the clocked logic operation. This ensures predictable behavior during system initialization or reset conditions.  
+
+* Synchronization: The synchronous reset feature ensures that the reset operation is synchronized with the clock signal, making it suitable for controlling the state of flip-flops and data paths in sequential logic circuits, ensuring consistent and reliable operation.
+
+* !gvim dff_syncres.v
+![Screenshot from 2023-09-03 21-49-43](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e86541ed-6199-4d12-b996-46b8dd8a30b6)
+
+* D Flip Flop with Asynchronous Set  
+
+* Data Storage: It stores a single binary bit (0 or 1) of data.  
+
+* Asynchronous Set: This flip-flop includes an extra input called "SET" or "SETB" (set) that, when asserted (typically set to logic 1), immediately forces the output Q to 1, regardless of the clock or data input.  
+
+* Clock-Controlled: Similar to other flip-flops, it operates on the rising or falling edge of a clock signal, and its output state (Q) changes accordingly.  
+
+* Memory Element: It is commonly used in digital systems to create memory elements that can be set asynchronously to a specific state (usually 1) for initialization or error recovery purposes.  
+
+* Synchronization: The D flip-flop with asynchronous set helps synchronize and control the timing of data transitions in sequential logic circuits, ensuring proper behavior during both normal operation and exceptional conditions.  
+  
+* !gvim dff_async_set.v
+![Screenshot from 2023-09-03 21-53-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d6f5072b-09c6-4628-8b90-ef373733a505)
+
+* D Flip Flop with Asynchronous Reset and Synchronous Reset 
+
+* Data Storage: This flip-flop can store a single binary bit (0 or 1) of data, just like a regular D flip-flop.  
+
+* Asynchronous Reset: It features an "ASYN_RESET" or "CLR" input for asynchronous reset, which, when asserted (typically set to logic 0), immediately forces the output Q to 0, regardless of the clock or data input. This provides a rapid and asynchronous means of clearing the flip-flop's state.  
+
+* Synchronous Reset: In addition to the asynchronous reset, it also has a "SYN_RESET" input for synchronous reset. When the "SYN_RESET" signal is asserted synchronously with the clock edge, it clears the flip-flop's state to a known value (usually 0) but only during the clock transition.  
+
+* Clock-Controlled: Like all flip-flops, it operates on the rising or falling edge of a clock signal, ensuring that data changes and resets occur at well-defined moments.  
+
+* Memory Element: This combined flip-flop serves as a memory element and can be cleared both asynchronously for immediate reset and synchronously to control the timing of resets, making it versatile for various applications in digital systems.  
+
+* Synchronization: It aids in synchronizing data transitions and provides flexible reset options, accommodating different design requirements, such as initialization, error recovery, or controlled state changes during specific clock cycles.
+
+* !gvim dff_asyncres_syncres.v
+![Screenshot from 2023-09-03 21-55-41](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/6bf78b4a-7aa2-47f4-956b-f54423d5e53d)  
 
 </details>
 
