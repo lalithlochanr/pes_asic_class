@@ -436,12 +436,12 @@ So the key difference is that hierarchy synthesis maintains the hierarchical str
 ![Screenshot from 2023-09-03 21-37-01](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1bb9dbc7-0e80-4129-bda3-b4c1ce4b9bba)
 
 * Simulation(Outside of yosys)
-  '''
+  ````
   cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
   iverilog dff_asyncres.v tb_dff_asyncres.v
   ./a.out
   gtkwave tb_dff_asyncres.vcd
-  '''
+  ````
 
 ![Screenshot from 2023-09-03 22-10-05](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4084290c-faac-49ab-a993-a0882c264039)
 
@@ -464,12 +464,12 @@ So the key difference is that hierarchy synthesis maintains the hierarchical str
 ![Screenshot from 2023-09-03 21-49-43](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e86541ed-6199-4d12-b996-46b8dd8a30b6)
 
 * Simulation(outside of yosys)
-'''
+````
 cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 iverilog dff_syncres.v tb_dff_syncres.v
 ./a.out
 gtkwave tb_dff_syncres.vcd
-'''  
+```` 
 ![Screenshot from 2023-09-03 22-12-29](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/98c1ca99-ae0f-4d35-90b5-a529d31b074d)  
 ![Screenshot from 2023-09-03 22-12-16](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/78722d28-fbfd-4323-b618-f71a3e46796d)  
 
@@ -490,12 +490,12 @@ gtkwave tb_dff_syncres.vcd
 ![Screenshot from 2023-09-03 21-53-22](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8094e53f-bbdc-4e99-b78c-aa1fe0c8c9b4)
 
 * Simulation(Outside of Yosys)
-'''
+````
 cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 iverilog dff_async_set.v tb_dff_async_set.v
 ./a.out
 gtkwave tb_dff_async_set.vcd
-'''
+````
 ![Screenshot from 2023-09-03 22-18-58](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/df4a571d-1df3-49a7-b1af-1646f169e89f)
 ![Screenshot from 2023-09-03 22-19-27](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/775657df-cab1-4bc6-840c-4254bffda128)
 
@@ -521,12 +521,12 @@ gtkwave tb_dff_async_set.vcd
 * !gvim dff_asyncres_syncres.v
 ![Screenshot from 2023-09-03 21-55-41](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/6bf78b4a-7aa2-47f4-956b-f54423d5e53d)
 *Simulation(Outside of Yosys)
-'''
+````
 cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 iverilog dff_asyncres_syncres.v tb_dff_asyncres_syncres.v
 ./a.out
 gtkwave tb_dff_asyncres_syncres.vcd
-'''
+````
 ![Screenshot from 2023-09-03 22-27-43](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4f4c6dc3-0230-4abf-9a6a-ecda234500b7)
 ![Screenshot from 2023-09-03 22-27-53](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/797c66bd-58ce-4297-a433-ae744276eb24)
 
