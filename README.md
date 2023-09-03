@@ -172,6 +172,9 @@ iverilog based simulation flow
 <details>
  <summary> Labs using iverilog and gtkwave </summary>  
 
+ - make a directory using command mkdir vsd
+ - then cd vsd
+
  ![Screenshot from 2023-08-29 08-44-20](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1d6c551f-5467-4914-b61f-a135026112db)
 
 
@@ -251,7 +254,43 @@ Faster the charging / discharging of capacitance - Lesser the cell delay
 
 <details>
  <summary> Labs using Yosys and Sky130 PDKs </summary>  
+
+ * Yosys Installation
+
+git clone https://github.com/YosysHQ/yosys.git  
+cd yosys  
+sudo apt install make  
+sudo apt-get update  
+sudo apt-get install build-essential clang bison flex  libreadline-dev gawk tcl-dev libffi-dev git  graphviz xdot pkg-config python3 libboost-system-dev libboost-python-dev libboost-filesystem-dev zlib1g-dev  
+make config-gcc  
+make  
+sudo make install  
+
+ * Read Commands used in Yosys
  
+ 1. `read liberty`: In Yosys, the "read liberty" command is used to import Liberty Standard Cell Library files, which contain information about the logical and timing characteristics of standard cells in digital designs.  
+
+2. `read verilog`: The "read verilog" command allows users to read Verilog hardware description language files, enabling Yosys to analyze and synthesize digital designs specified in Verilog.  
+
+3. `read_ilang`: This command reads the ILANG (Intermediate Language for FPGA) format, which is a Yosys-specific intermediate representation of a digital design.  
+
+4. `read_blif`: "read_blif" is used to import designs in the Berkeley Logic Interchange Format (BLIF), a common format for representing digital logic circuits.  
+
+5. `read_json`: Yosys can read JSON files that contain digital design information, allowing for the import and manipulation of designs in this structured data format.  
+
+6. `read_hdl`: This command is used for reading custom hardware description languages (HDLs) supported by Yosys, extending its compatibility with various HDLs beyond Verilog and VHDL.  
+
+7. `read_aiger`: Yosys can read AIGER format files, which represent And-Inverter Graphs (AIGs) and are often used in formal verification and synthesis tasks.  
+
+8. `read_fsm`: For finite state machine (FSM) synthesis, the "read_fsm" command allows Yosys to interpret and work with FSM specifications in a specific format.    
+
+9. `read_smtlib`: Yosys can read SMT-LIB format files, which are commonly used for formal verification and symbolic model checking of digital designs.    
+
+10. `read_xdc`: When working with Xilinx FPGAs, the "read_xdc" command is used to read Xilinx Design Constraints (XDC) files, which define placement and routing constraints for the design.
+
+![Screenshot from 2023-09-03 18-29-54](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/50112270-42b0-4c85-b33d-42faacc99f1f)
+
+
 </details>
 
 
