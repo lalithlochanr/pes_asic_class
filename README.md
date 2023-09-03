@@ -200,7 +200,7 @@ iverilog based simulation flow
 ![Screenshot from 2023-08-29 09-29-32](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d42b41f9-aac8-45ce-9f91-4c0f9cfe5eec)  
 
 <details> 
- <summary></summary>Yosys and Logic Synthesis </summary>  
+ <summary> Yosys and Logic Synthesis </summary>  
  
 * Synthesizer
   - tool used for converting RTL to netlist  
