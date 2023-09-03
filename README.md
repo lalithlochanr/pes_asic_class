@@ -145,6 +145,9 @@ Folders under riscv_workshop_collaterals and its content
 
 ## RTL DESIGN using Verilog with SKY130 Technology  
 
+## DAY 3
+
+
 ### Introduction to iverilog design (open source simulator) test bench  
 
 <details>
@@ -242,11 +245,13 @@ Faster the charging / discharging of capacitance - Lesser the cell delay
 
 ![Screenshot from 2023-08-29 10-04-42](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/48a6a174-a620-4ca3-8009-26f993561829)  
 
-* Open yosys on terminal
+* Open yosys on terminal  
 
+</details>
 
-
-
+<details>
+ <summary> Labs using Yosys and Sky130 PDKs </summary>  
+ 
 </details>
 
 
