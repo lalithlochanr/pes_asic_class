@@ -18,6 +18,9 @@ Restart the terminal.
 
 ### Day 1
 
+<details>
+<summary>Introduction to RISC V & LAB</summary>
+
 ### Introduction to RISC V
 
 * Instruction Set Architecture(ISA) defines the programming interface between software and hardware. It specifies the instructions that a CPU can understand and execute, along with their formats, addressing modes, and behavior.  
@@ -97,8 +100,12 @@ The range of unsigned numbers also depends on the number of bits used. For an un
 ![Screenshot from 2023-08-23 15-30-25](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/bdd47b1e-47a6-450f-9342-8eb520706947)
 ![Screenshot from 2023-08-23 15-30-51](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/40a754b0-cc28-43af-ac25-c7037e9fcc67)
 
+</details>
+
 ## DAY 2
 
+<details>
+ <summary>ABI,MEMMORY ALLOCATION & BASIC INSTRUCTIONS</summary>
 ### APPLICATION BINARY INTERFACE(ABI)
 
 An Application Binary Interface (ABI) serves as a crucial bridge between software components at the binary level, defining the conventions and rules for communication between different parts of a computer system. It encompasses a set of protocols, data formats, and calling conventions that enable compatibility and interoperability between compiled code, libraries, and the operating system. ABIs ensure that software written in different languages or by different developers can interact seamlessly, allowing for the execution of programs across diverse hardware architectures and operating systems. It dictates aspects such as parameter passing, memory layout, system call invocation, and exception handling, facilitating the development of robust and portable software solutions.  
@@ -142,6 +149,8 @@ Folders under riscv_workshop_collaterals and its content
 ![Screenshot from 2023-08-23 14-32-23](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/8fd1e745-fd6e-49ec-a3d8-daefbfbf5a7b)  
 ![Screenshot from 2023-08-23 14-37-46](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/1af1a024-6548-4ea2-bf88-d1725e58e5e3)  
 ![Screenshot from 2023-08-23 14-38-50](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7949bae5-e933-4172-aa65-7a48868a0751)
+
+</details>
 
 ## RTL DESIGN using Verilog with SKY130 Technology  
 
