@@ -1233,7 +1233,8 @@ gtkwave tb_ternary_operator_mux.vcd
  
  gvim bad_mux.v
  ````
-![Screenshot from 2023-09-04 04-59-52](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/ae3f64a0-d5b6-4bc9-84cd-674fc40eb351)
+![Screenshot from 2023-09-04 05-09-25](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/390f1333-ea56-416f-90e0-0b680c72fcb2)
+
 
 * Simulation
 ````
@@ -1247,8 +1248,106 @@ gtkwave tb_bad_mux.vcd
 
 ````
 ![Screenshot from 2023-09-04 05-11-33](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/b6fa5f48-f251-4748-9ea3-a05f6f0e15da)
+* With the variations of select lines the output obtained from the mux is not accurate.
+
+* Synthesis
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog bad_mux.v
+
+synth -top bad_mux
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 05-17-35](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/c32a48ba-10f1-433a-b1c6-a1e225be4d39)
+
+![Screenshot from 2023-09-04 05-19-38](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/6f9c3796-d20c-41a3-9f91-e48e7f74aeaa)  
+
+* GLS
+````
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+
+./a.out
+
+gtkwave tb_bad_mux.vcd
+````
+![Screenshot from 2023-09-04 05-21-55](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/e4e341e8-e311-47af-95ad-29f1457f88dd)
+
+** Bad mux with respect to Synthesis Simulation mismatch
+![Screenshot from 2023-09-04 05-23-46](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/89f41537-4d0a-4c5b-bf2f-545fa3d12bc9)  
+
 
 </details>
+</details>
+
+<details>
+ <summary> Labs on Synthesis-Simulation Mismatch for Blocking Statement </summary>
+ <details>
+  <summary>Blocking caveat</summary>
+  
+  ````
+  cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+  
+  gvim blocking_caveat.v
+  ````
+![Screenshot from 2023-09-04 05-29-03](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/a43bb4f2-a60d-4af2-88d4-42347bd97b32)
+
+* Simulation
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+iverilog blocking_caveat.v tb_blocking_caveat.v
+
+./a.out
+
+gtkwave tb_blocking_caveat.vcd
+
+````
+
+![Screenshot from 2023-09-04 05-32-46](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/d695ab3b-c095-4e9b-9f5f-83001a6606eb)
+
+* Synthesis
+````
+cd vsd/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog blocking_caveat.v
+
+synth -top blocking_caveat
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+````
+![Screenshot from 2023-09-04 05-34-14](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/42de4dc1-758a-482b-9157-cca008afc6d3)
+![Screenshot from 2023-09-04 05-34-25](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/4f7601ee-dc0e-44e1-9ce1-84ba6b649a9b)
+
+* GLS
+````
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+
+./a.out
+
+gtkwave tb_blocking_caveat.vcd   
+````
+![Screenshot from 2023-09-04 05-36-40](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7e1e465b-7f4a-4648-9ddf-b5a744343353)
+
+** Blocking caveat Synthesis Simulation mismatch
+![Screenshot from 2023-09-04 05-37-49](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/7e831276-344d-4a88-92e5-9cc200348fc1)
+
+
+ </details>
+ 
 </details>
 
 
