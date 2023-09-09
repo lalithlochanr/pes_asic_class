@@ -336,20 +336,21 @@ sudo make install
 ### Timing libs,heirarchial v/s flat synthgesis and efficient flop coding styles
 
 <details>
- <summary> Introduction to timing.libs </summary>    
-* Introduction to Dot lib  
+ <summary> Introduction to timing.libs </summary>   
+ 
+* Introduction to Dot lib    
  - To view the contents in the .lib file use command: vim ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
  ![Screenshot from 2023-09-03 20-01-25](https://github.com/lalithlochanr/pes_asic_class/assets/108328466/2214cc47-613f-4cf6-83b9-f9a9a2cdf1a2)
- -Additional information required can be obtained in the file as shown above like CMOS,different flavors of cell,area(area inversely proportional to delay and directionly proportional to power), etc.  
+ -Additional information required can be obtained in the file as shown above like CMOS,different flavors of cell,area(area inversely proportional to delay and directionly proportional to power), etc.    
 ** Here the line "library ("sky130_fd_sc_hd__tt_025C_1v80")"  gives you the name of library and from it we can infer some information.   
- - Important parameters for variation (eg. machine variation, voltage variation, etc)  
- * P - Process - Variations due to fabrication    
- * V - Voltage  
- * T - Temperature  
- so we need to factorize all these variations for effficient working.  
-tt- typical process(type)  
-025C- indicates temperature  
-1v8- indicates voltage  
+ - Important parameters for variation (eg. machine variation, voltage variation, etc)    
+ * P - Process - Variations due to fabrication      
+ * V - Voltage    
+ * T - Temperature    
+ so we need to factorize all these variations for effficient working.    
+tt- typical process(type)    
+025C- indicates temperature    
+1v8- indicates voltage    
  
 </details>
 
