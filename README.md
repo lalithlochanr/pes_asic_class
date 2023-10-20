@@ -106,6 +106,7 @@ The range of unsigned numbers also depends on the number of bits used. For an un
 
 <details>
  <summary>ABI,MEMMORY ALLOCATION & BASIC INSTRUCTIONS</summary>
+ 
 ### APPLICATION BINARY INTERFACE(ABI)
 
 An Application Binary Interface (ABI) serves as a crucial bridge between software components at the binary level, defining the conventions and rules for communication between different parts of a computer system. It encompasses a set of protocols, data formats, and calling conventions that enable compatibility and interoperability between compiled code, libraries, and the operating system. ABIs ensure that software written in different languages or by different developers can interact seamlessly, allowing for the execution of programs across diverse hardware architectures and operating systems. It dictates aspects such as parameter passing, memory layout, system call invocation, and exception handling, facilitating the development of robust and portable software solutions.  
